@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ThreeSixtyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/three-sixty',[ThreeSixtyController::class,'index']);
+Route::post('/three-sixty/store',[ThreeSixtyController::class,'store']);
+Route::get('/three-sixty/{id}/{url}',[ThreeSixtyController::class,'look']);
+Route::get('/three-sixty/delete/{id}',[ThreeSixtyController::class,'delete']);
