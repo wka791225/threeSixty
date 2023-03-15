@@ -70,21 +70,29 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+        #container{
+            width: 100%;
+            min-height:100dvh ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
 <body>
     <main>
+       
         <section id="container">
             <div class="img-send">
-                <input type="hidden" class="img-list" value="{{}}">
+                <input type="hidden" class="img-list" value="{{$panorama}}">
                 <img class="test-img">
                 <div id="three">
                 </div>
-                <div class="direction">
+                {{-- <div class="direction">
                     <div class="prev">＜</div>
                     <div class="next">＞</div>
-                </div>
+                </div> --}}
             </div>
 
         </section>
@@ -94,8 +102,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@mladenilic/threesixty.js/dist/threesixty.js"></script>
     <script>
+        const imgList = document.querySelector('.img-list').value;
+        const list = JSON.parse(imgList);
+        console.log(list);
         const threeSixty = new ThreeSixty(document.querySelector('#three'), {
-            image: imgPath,
+            image: list,
+            width: 640,
+            height: 640,
             prev: document.querySelector('.prev'),
             next: document.querySelector('.next')
         });

@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 Route::get('/three-sixty',[ThreeSixtyController::class,'index']);
 Route::post('/three-sixty/store',[ThreeSixtyController::class,'store']);
-Route::get('/three-sixty/{id}/{url}',[ThreeSixtyController::class,'look']);
+Route::get('/three-sixty/look/{id}/{url}',[ThreeSixtyController::class,'look']);
 Route::get('/three-sixty/delete/{id}',[ThreeSixtyController::class,'delete']);
