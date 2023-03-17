@@ -131,8 +131,6 @@
         </section>
     </main>
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/@mladenilic/threesixty.js/dist/threesixty.js"></script>
     <script>
         const send = document.querySelector('.send');

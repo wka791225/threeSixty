@@ -66,13 +66,15 @@
         }
 
         #three {
-            background-size: cover;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
         }
         #container{
-            width: 100%;
-            min-height:100dvh ;
+            width: 100dvw;
+            min-height: 100dvh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -86,7 +88,6 @@
         <section id="container">
             <div class="img-send">
                 <input type="hidden" class="img-list" value="{{$panorama}}">
-                <img class="test-img">
                 <div id="three">
                 </div>
                 {{-- <div class="direction">
@@ -104,14 +105,15 @@
     <script>
         const imgList = document.querySelector('.img-list').value;
         const list = JSON.parse(imgList);
-        console.log(list);
+        console.log(window);
         const threeSixty = new ThreeSixty(document.querySelector('#three'), {
             image: list,
-            width: 640,
-            height: 640,
+            width: window.innerWidth ,
+            height: window.innerHeight ,
             prev: document.querySelector('.prev'),
-            next: document.querySelector('.next')
+            next: document.querySelector('.next'),
         });
+        
         threeSixty.init();
     </script>
 </body>
